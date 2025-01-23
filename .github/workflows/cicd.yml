@@ -34,3 +34,19 @@ jobs:
       - name: Unit Test
         run: |
           pytest -v
+
+      - name: checkout branch
+        run: |
+          git checkout -b main
+
+      - name: Docker Login
+        run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      # - name: Docker Build
+      #   run: |
+      #     docker build -t ${{ secrets.DOCKER_USERNAME }}/flask-web-project1:latest .
+
+      # - name: Docker Push
+      #   run: |
+      #     docker push ${{ secrets.DOCKER_USERNAME }}/flask-web-project1:latest
