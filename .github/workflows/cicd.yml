@@ -39,9 +39,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout branch
-        run: |
-          git checkout -b main
+      # - name: checkout branch
+      #   run: |
+      #     git checkout -b main
 
       - name: Docker Login
         uses: docker/login-action@v3
